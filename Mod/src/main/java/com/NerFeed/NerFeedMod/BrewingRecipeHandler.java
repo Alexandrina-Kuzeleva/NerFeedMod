@@ -11,7 +11,7 @@ public class BrewingRecipeHandler implements IBrewingRecipe {
     @Override
     public boolean isInput(ItemStack input) {
         Potion potion = PotionUtils.getPotion(input);
-        return potion == ModPotions.ALCOHOL.get() || potion == ModPotions.VODKA.get();
+        return potion == ModPotions.ALCOHOL.get() || input.getItem() == ModItems.VODKA_POTION.get();
     }
 
     @Override

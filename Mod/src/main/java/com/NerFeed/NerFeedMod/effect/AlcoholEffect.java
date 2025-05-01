@@ -14,7 +14,8 @@ public class AlcoholEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide && entity.getRandom().nextInt(100) == 0) {
-            entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0));
+            //entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0));
+            entity.addEffect(new MobEffectInstance(MobEffects.HARM, 1, 10));
         }
     }
 

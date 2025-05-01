@@ -4,5 +4,6 @@
     "effect.nerfeedmod.alcohol": "Alcohol Effect",
     "item.minecraft.potion.effect.alcohol": "Potion of Alcohol",
     "effect.nerfeedmod.vodka": "Vodka Effect",
-    "item.minecraft.potion.effect.vodka": "Potion of Vodka"
+    "item.minecraft.potion.effect.vodka": "Vodka",
+    "item.nerfeedmod.vodka_potion.effect.empty": "Vodka"
 }

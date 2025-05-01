@@ -15,9 +15,6 @@
         }
     ],
     "result": {
-        "item": "minecraft:potion",
-        "nbt": {
-            "Potion": "nerfeedmod:vodka"
-        }
+        "item": "nerfeedmod:vodka_potion"
     }
 }

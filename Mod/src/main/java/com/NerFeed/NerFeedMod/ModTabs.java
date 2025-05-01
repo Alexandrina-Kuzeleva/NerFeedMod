@@ -21,7 +21,7 @@ public class ModTabs {
             .displayItems((parameters, output) -> {
                 output.accept(ModBlocks.LIGHT_CUBE_ITEM.get());
                 output.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.ALCOHOL.get()));
-                output.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.VODKA.get()));
+                output.accept(new ItemStack(ModItems.VODKA_POTION.get())); // Заменяем на кастомный предмет
             })
             .build()
     );
