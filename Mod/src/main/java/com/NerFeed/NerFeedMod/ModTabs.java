@@ -1,9 +1,12 @@
 package com.NerFeed.NerFeedMod;
 
+import com.NerFeed.NerFeedMod.potion.ModPotions;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -16,7 +19,9 @@ public class ModTabs {
             .title(Component.translatable("itemGroup.mymod"))
             .icon(() -> new ItemStack(ModBlocks.LIGHT_CUBE_ITEM.get()))
             .displayItems((parameters, output) -> {
-                output.accept(ModBlocks.LIGHT_CUBE_ITEM.get()); // Добавляем предмет в вкладку
+                output.accept(ModBlocks.LIGHT_CUBE_ITEM.get());
+                output.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.ALCOHOL.get()));
+                output.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.VODKA.get()));
             })
             .build()
     );

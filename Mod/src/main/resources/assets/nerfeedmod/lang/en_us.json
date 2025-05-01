@@ -1,4 +1,8 @@
 {
-    "itemGroup.mymod": "NerFeedMod",
-    "block.nerfeedmod.light_cube": "Light Cube"
+    "itemGroup.mymod": "NerFeed Mod",
+    "block.nerfeedmod.light_cube": "Light Cube",
+    "effect.nerfeedmod.alcohol": "Alcohol Effect",
+    "item.minecraft.potion.effect.alcohol": "Potion of Alcohol",
+    "effect.nerfeedmod.vodka": "Vodka Effect",
+    "item.minecraft.potion.effect.vodka": "Potion of Vodka"
 }
