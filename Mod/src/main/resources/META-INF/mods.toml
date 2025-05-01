@@ -73,13 +73,3 @@ description='''${mod_description}'''
 #openGLVersion="[3.2,)"
 
 
-modLoader="javafml"
-loaderVersion="[47,)"
-license="All Rights Reserved"
-
-[[mods]]
-modId="nerfeedmod"  # Должно совпадать с Main.MOD_ID
-version="1.0.0"
-displayName="NerFeed Mod"
-description="Мой первый мод для Minecraft от NerFeed!"
-authors="NerFeed"
