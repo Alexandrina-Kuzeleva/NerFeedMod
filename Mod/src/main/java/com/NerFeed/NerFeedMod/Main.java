@@ -27,7 +27,7 @@ public class Main {
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::buildCreativeTabContents);
         ModTabs.register(modEventBus);
-        ModBlocks.register();
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModEffects.registerEffects(modEventBus);
         ModPotions.registerPotions();

@@ -1,6 +1,7 @@
 package com.NerFeed.NerFeedMod.item;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -8,9 +9,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import java.util.List;
+
+import com.NerFeed.NerFeedMod.ModBlocks;
 
 public class VodkaPotionItem extends PotionItem {
     private static final String VODKA_COUNT_KEY = "VodkaCount";
@@ -22,13 +27,11 @@ public class VodkaPotionItem extends PotionItem {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!level.isClientSide) {
-            // Получаем persistentData игрока
             CompoundTag persistentData = entity.getPersistentData();
             int vodkaCount = persistentData.getInt(VODKA_COUNT_KEY);
-            vodkaCount++; // Увеличиваем счётчик
+            vodkaCount++;
             persistentData.putInt(VODKA_COUNT_KEY, vodkaCount);
 
-            // Удаляем все предыдущие эффекты, чтобы избежать наложения
             entity.removeEffect(MobEffects.DAMAGE_BOOST);
             entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
             entity.removeEffect(MobEffects.CONFUSION);
@@ -36,27 +39,42 @@ public class VodkaPotionItem extends PotionItem {
             entity.removeEffect(MobEffects.HUNGER);
             entity.removeEffect(MobEffects.DIG_SLOWDOWN);
 
-            // Применяем эффекты в зависимости от количества выпитых бутылок
             if (vodkaCount == 1) {
-                // 1 бутылка: Strength I (3 минуты)
                 entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 0));
             } else if (vodkaCount == 2) {
-                // 2 бутылки: Slowness I (3 минуты)
                 entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 3600, 0));
             } else if (vodkaCount == 3) {
-                // 3 бутылки: Nausea, Weakness, Hunger, Mining Fatigue (3 минуты)
                 entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 3600, 0));
                 entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 3600, 0));
                 entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 3600, 0));
                 entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 3600, 0));
             } else if (vodkaCount >= 4) {
-                // 4+ бутылок: смерть
                 entity.hurt(entity.damageSources().genericKill(), Float.MAX_VALUE);
-                // Сбрасываем счётчик после смерти
                 persistentData.putInt(VODKA_COUNT_KEY, 0);
             }
         }
         return super.finishUsingItem(stack, level, entity);
+    }
+
+    @Override
+    public InteractionResult useOn(UseOnContext context) {
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        BlockPos placePos = pos.relative(context.getClickedFace());
+        ItemStack stack = context.getItemInHand();
+
+        // Проверяем, можно ли разместить блок
+        if (level.isEmptyBlock(placePos)) {
+            if (!level.isClientSide) {
+                level.setBlock(placePos, ModBlocks.VODKA_BOTTLE_BLOCK.get().defaultBlockState(), 3);
+                if (!context.getPlayer().isCreative()) {
+                    stack.shrink(1); // Уменьшаем количество предметов в руке
+                }
+            }
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+
+        return super.useOn(context);
     }
 
     @Override
