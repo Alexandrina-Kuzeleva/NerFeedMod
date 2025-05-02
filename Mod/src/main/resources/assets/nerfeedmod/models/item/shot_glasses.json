@@ -1,3 +1,6 @@
 {
-    "parent": "nerfeedmod:block/shot_glasses"
-}
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "nerfeedmod:item/shot_glasses_item"
+    }
+  }
