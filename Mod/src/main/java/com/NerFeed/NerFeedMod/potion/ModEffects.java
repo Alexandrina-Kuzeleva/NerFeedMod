@@ -2,6 +2,7 @@ package com.NerFeed.NerFeedMod.potion;
 
 import com.NerFeed.NerFeedMod.Main;
 import com.NerFeed.NerFeedMod.effect.AlcoholEffect;
+import com.NerFeed.NerFeedMod.effect.VinoEffect;
 import com.NerFeed.NerFeedMod.effect.VodkaEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
@@ -15,6 +16,7 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> ALCOHOL = EFFECTS.register("alcohol", AlcoholEffect::new);
     public static final RegistryObject<MobEffect> VODKA = EFFECTS.register("vodka", VodkaEffect::new);
+    public static final RegistryObject<MobEffect> VINO = EFFECTS.register("vino", VinoEffect::new);
 
     public static void registerEffects(IEventBus modEventBus) {
         EFFECTS.register(FMLJavaModLoadingContext.get().getModEventBus());

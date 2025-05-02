@@ -16,6 +16,8 @@ public class ModPotions {
         () -> new Potion(new MobEffectInstance(ModEffects.ALCOHOL.get(), 3600, 0)));
     public static final RegistryObject<Potion> VODKA = POTIONS.register("vodka", 
         () -> new Potion(new MobEffectInstance(ModEffects.VODKA.get(), 3600, 0)));
+    public static final RegistryObject<Potion> VINO = POTIONS.register("vino", 
+        () -> new Potion(new MobEffectInstance(ModEffects.VINO.get(), 3600, 0)));
 
     public static void registerPotions() {
         POTIONS.register(FMLJavaModLoadingContext.get().getModEventBus());

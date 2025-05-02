@@ -2,6 +2,7 @@ package com.NerFeed.NerFeedMod;
 
 import com.NerFeed.NerFeedMod.block.LightCube;
 import com.NerFeed.NerFeedMod.block.ShotGlassesBlock;
+import com.NerFeed.NerFeedMod.block.VinoBottleBlock;
 import com.NerFeed.NerFeedMod.block.VodkaBottleBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.BlockItem;
@@ -23,6 +24,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> VODKA_BOTTLE_BLOCK = BLOCKS.register("vodka_bottle_block", VodkaBottleBlock::new);
     public static final RegistryObject<Item> VODKA_BOTTLE_BLOCK_ITEM = BLOCK_ITEMS.register("vodka_bottle_block", () -> 
         new BlockItem(VODKA_BOTTLE_BLOCK.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Block> VINO_BOTTLE_BLOCK = BLOCKS.register("vino_bottle_block", VinoBottleBlock::new);
+    public static final RegistryObject<Item> VINO_BOTTLE_BLOCK_ITEM = BLOCK_ITEMS.register("vino_bottle_block", () -> 
+        new BlockItem(VINO_BOTTLE_BLOCK.get(), new Item.Properties())
     );
 
     public static final RegistryObject<Block> SHOT_GLASSES = BLOCKS.register("shot_glasses", ShotGlassesBlock::new);

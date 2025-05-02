@@ -1,6 +1,7 @@
 package com.NerFeed.NerFeedMod;
 
 import com.NerFeed.NerFeedMod.entity.AlcoholicEntity;
+import com.NerFeed.NerFeedMod.item.VinoPotionItem;
 import com.NerFeed.NerFeedMod.item.VodkaPotionItem;
 
 import net.minecraft.world.InteractionHand;
@@ -19,6 +20,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> VODKA_POTION = ITEMS.register("vodka_potion", () -> 
         new VodkaPotionItem(new Item.Properties().stacksTo(1))
+    );
+
+    public static final RegistryObject<Item> VINO_POTION = ITEMS.register("vino_potion", () -> 
+        new VinoPotionItem(new Item.Properties().stacksTo(1))
     );
 
     public static final RegistryObject<Item> ALCOHOLIC_SPAWN_EGG = ITEMS.register("alcoholic_spawn_egg",

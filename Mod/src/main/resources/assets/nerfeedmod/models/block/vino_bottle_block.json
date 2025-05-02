@@ -1,0 +1,32 @@
+{
+    "textures": {
+        "bottle": "nerfeedmod:block/vino_bottle_block",
+        "particle": "nerfeedmod:block/vino_bottle_block"
+    },
+    "elements": [
+    {
+        "from": [6, 0, 6],
+        "to": [10, 8, 10],
+        "faces": {
+            "north": {"uv": [0, 0, 4, 8], "texture": "#bottle"},
+            "east": {"uv": [4, 0, 8, 8], "texture": "#bottle"},
+            "south": {"uv": [8, 0, 12, 8], "texture": "#bottle"},
+            "west": {"uv": [12, 0, 16, 8], "texture": "#bottle"},
+            "up": {"uv": [0, 8, 4, 12], "texture": "#bottle"},
+            "down": {"uv": [4, 8, 8, 12], "texture": "#bottle"}
+        }
+    },
+    {
+        "from": [7, 8, 7],
+        "to": [9, 10, 9],
+        "faces": {
+            "north": {"uv": [0, 12, 2, 14], "texture": "#bottle"},
+            "east": {"uv": [2, 12, 4, 14], "texture": "#bottle"},
+            "south": {"uv": [4, 12, 6, 14], "texture": "#bottle"},
+            "west": {"uv": [6, 12, 8, 14], "texture": "#bottle"},
+            "up": {"uv": [8, 12, 10, 14], "texture": "#bottle"},
+            "down": {"uv": [10, 12, 12, 14], "texture": "#bottle"}
+        }
+    }
+    ]
+}

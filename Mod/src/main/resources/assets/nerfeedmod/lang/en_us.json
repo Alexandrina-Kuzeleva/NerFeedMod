@@ -6,5 +6,8 @@
     "effect.nerfeedmod.vodka": "Vodka Effect",
     "item.minecraft.potion.effect.vodka": "Vodka",
     "item.nerfeedmod.vodka_potion.effect.empty": "Vodka",
+    "effect.nerfeedmod.vino": "Vino Effect",
+    "item.minecraft.potion.effect.vino": "Vino",
+    "item.nerfeedmod.vino_potion.effect.empty": "Vino",
     "item.nerfeedmod.alcoholic_spawn_egg": "Alcoholic Spawn Egg"
 }
