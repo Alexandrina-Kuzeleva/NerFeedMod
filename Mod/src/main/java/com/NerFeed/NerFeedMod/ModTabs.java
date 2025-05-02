@@ -23,6 +23,7 @@ public class ModTabs {
                 output.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.ALCOHOL.get()));
                 output.accept(new ItemStack(ModItems.VODKA_POTION.get())); // Заменяем на кастомный предмет
                 output.accept(new ItemStack(ModItems.ALCOHOLIC_SPAWN_EGG.get())); 
+                output.accept(ModBlocks.SHOT_GLASSES_ITEM.get());
             })
             .build()
     );
