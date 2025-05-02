@@ -29,6 +29,7 @@ public class Main {
         ModTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+        ModEntity.register(modEventBus);
         ModEffects.registerEffects(modEventBus);
         ModPotions.registerPotions();
     }

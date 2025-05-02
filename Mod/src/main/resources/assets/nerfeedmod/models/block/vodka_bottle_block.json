@@ -1,32 +1,32 @@
 {
     "textures": {
         "bottle": "nerfeedmod:block/vodka_bottle_block",
-        "particle": "nerfeedmod:block/light_cube"
+        "particle": "nerfeedmod:block/vodka_bottle_block"
     },
     "elements": [
-        {
-            "from": [6, 0, 6],
-            "to": [10, 8, 10],
-            "faces": {
-                "north": {"uv": [0, 0, 16, 32], "texture": "#bottle"},
-                "east": {"uv": [16, 0, 32, 32], "texture": "#bottle"},
-                "south": {"uv": [32, 0, 48, 32], "texture": "#bottle"},
-                "west": {"uv": [48, 0, 64, 32], "texture": "#bottle"},
-                "up": {"uv": [0, 32, 16, 48], "texture": "#bottle"},
-                "down": {"uv": [16, 32, 32, 48], "texture": "#bottle"}
-            }
-        },
-        {
-            "from": [7, 8, 7],
-            "to": [9, 10, 9],
-            "faces": {
-                "north": {"uv": [0, 48, 8, 56], "texture": "#bottle"},
-                "east": {"uv": [8, 48, 16, 56], "texture": "#bottle"},
-                "south": {"uv": [16, 48, 24, 56], "texture": "#bottle"},
-                "west": {"uv": [24, 48, 32, 56], "texture": "#bottle"},
-                "up": {"uv": [32, 48, 40, 56], "texture": "#bottle"},
-                "down": {"uv": [40, 48, 48, 56], "texture": "#bottle"}
-            }
+    {
+        "from": [6, 0, 6],
+        "to": [10, 8, 10],
+        "faces": {
+            "north": {"uv": [0, 0, 4, 8], "texture": "#bottle"},
+            "east": {"uv": [4, 0, 8, 8], "texture": "#bottle"},
+            "south": {"uv": [8, 0, 12, 8], "texture": "#bottle"},
+            "west": {"uv": [12, 0, 16, 8], "texture": "#bottle"},
+            "up": {"uv": [0, 8, 4, 12], "texture": "#bottle"},
+            "down": {"uv": [4, 8, 8, 12], "texture": "#bottle"}
         }
+    },
+    {
+        "from": [7, 8, 7],
+        "to": [9, 10, 9],
+        "faces": {
+            "north": {"uv": [0, 12, 2, 14], "texture": "#bottle"},
+            "east": {"uv": [2, 12, 4, 14], "texture": "#bottle"},
+            "south": {"uv": [4, 12, 6, 14], "texture": "#bottle"},
+            "west": {"uv": [6, 12, 8, 14], "texture": "#bottle"},
+            "up": {"uv": [8, 12, 10, 14], "texture": "#bottle"},
+            "down": {"uv": [10, 12, 12, 14], "texture": "#bottle"}
+        }
+    }
     ]
 }
