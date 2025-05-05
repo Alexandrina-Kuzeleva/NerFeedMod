@@ -6,8 +6,11 @@
     "effect.nerfeedmod.vodka": "Vodka Effect",
     "item.minecraft.potion.effect.vodka": "Vodka",
     "item.nerfeedmod.vodka_potion.effect.empty": "Vodka",
-    "effect.nerfeedmod.vino": "Vino Effect",
-    "item.minecraft.potion.effect.vino": "Vino",
-    "item.nerfeedmod.vino_potion.effect.empty": "Vino",
-    "item.nerfeedmod.alcoholic_spawn_egg": "Alcoholic Spawn Egg"
+    "effect.nerfeedmod.vino": "Wine Effect",
+    "item.minecraft.potion.effect.vino": "Wine",
+    "item.nerfeedmod.vino_potion.effect.empty": "Wine",
+    "item.nerfeedmod.alcoholic_spawn_egg": "Alcoholic Spawn Egg",
+    "block.nerfeedmod.shot_glasses": "Shot glasses",
+    "item.nerfeedmod.grape": "Grape",
+    "block.nerfeedmod.grape_bush": "Grape Bush"
 }

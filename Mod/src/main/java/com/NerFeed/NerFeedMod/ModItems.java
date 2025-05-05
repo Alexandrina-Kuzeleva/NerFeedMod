@@ -1,12 +1,14 @@
 package com.NerFeed.NerFeedMod;
 
 import com.NerFeed.NerFeedMod.entity.AlcoholicEntity;
+import com.NerFeed.NerFeedMod.item.GrapeItem;
 import com.NerFeed.NerFeedMod.item.VinoPotionItem;
 import com.NerFeed.NerFeedMod.item.VodkaPotionItem;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -42,6 +44,10 @@ public class ModItems {
             }
         }
     );
+
+    public static final RegistryObject<Item> GRAPE = ITEMS.register("grape", GrapeItem::new);
+    public static final RegistryObject<Item> GRAPE_BUSH_ITEM = ITEMS.register("grape_bush", 
+        () -> new BlockItem(ModBlocks.GRAPE_BUSH.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

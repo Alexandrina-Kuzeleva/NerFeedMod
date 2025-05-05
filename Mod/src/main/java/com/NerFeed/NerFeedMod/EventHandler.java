@@ -9,12 +9,14 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class EventHandler {
     private static final String VODKA_COUNT_KEY = "VodkaCount";
+    private static final String WINE_COUNT_KEY = "WineCount";
 
     @SubscribeEvent
     public static void onLivingDeath(LivingDeathEvent event) {
         if (event.getEntity() instanceof Player player) {
-            CompoundTag persistentData = player.getPersistentData();
-            persistentData.putInt(VODKA_COUNT_KEY, 0); // Сбрасываем счётчик при смерти
+            CompoundTag data = player.getPersistentData();
+            data.putInt(VODKA_COUNT_KEY, 0);
+            data.putInt(WINE_COUNT_KEY, 0);
         }
     }
 }

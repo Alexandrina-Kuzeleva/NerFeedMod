@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:potion",
+            "nbt": {
+                "Potion": "nerfeedmod:alcohol"
+            }
+        },
+        {
+            "item": "minecraft:potion",
+            "nbt": {
+                "Potion": "minecraft:water"
+            }
+        },
+        {
+            "item": "nerfeedmod:grape"
+        },
+        {
+            "item": "minecraft:sugar"
+        }
+    ],
+    "result": {
+        "item": "nerfeedmod:vino_potion"
+    }
+}

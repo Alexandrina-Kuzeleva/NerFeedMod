@@ -9,5 +9,8 @@
     "effect.nerfeedmod.vino": "Эффект вина",
     "item.minecraft.potion.effect.vino": "Вино",
     "item.nerfeedmod.vino_potion.effect.empty": "Вино",
-    "item.nerfeedmod.alcoholic_spawn_egg": "Яйцо спавна алкоголика"
+    "item.nerfeedmod.alcoholic_spawn_egg": "Яйцо спавна алкоголика",
+    "block.nerfeedmod.shot_glasses": "Рюмки",
+    "item.nerfeedmod.grape": "Виноград",
+    "block.nerfeedmod.grape_bush": "Виноградный куст"
 }

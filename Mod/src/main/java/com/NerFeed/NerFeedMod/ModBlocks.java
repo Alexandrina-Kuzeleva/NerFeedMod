@@ -1,9 +1,12 @@
 package com.NerFeed.NerFeedMod;
 
+import com.NerFeed.NerFeedMod.block.GrapeBushBlock;
 import com.NerFeed.NerFeedMod.block.LightCube;
 import com.NerFeed.NerFeedMod.block.ShotGlassesBlock;
 import com.NerFeed.NerFeedMod.block.VinoBottleBlock;
 import com.NerFeed.NerFeedMod.block.VodkaBottleBlock;
+import com.NerFeed.NerFeedMod.item.GrapeItem;
+
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -36,8 +39,11 @@ public class ModBlocks {
             () -> new BlockItem(SHOT_GLASSES.get(), new Item.Properties())
     );
 
+    public static final RegistryObject<Block> GRAPE_BUSH = BLOCKS.register("grape_bush", GrapeBushBlock::new);
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
         BLOCK_ITEMS.register(eventBus);
     }
+
 }
