@@ -12,5 +12,6 @@
     "item.nerfeedmod.alcoholic_spawn_egg": "Alcoholic Spawn Egg",
     "block.nerfeedmod.shot_glasses": "Shot glasses",
     "item.nerfeedmod.grape": "Grape",
-    "block.nerfeedmod.grape_bush": "Grape Bush"
+    "block.nerfeedmod.grape_bush": "Grape Bush",
+    "item.nerfeedmod.mug_of_beer.effect.empty": "Beer"
 }

@@ -12,5 +12,6 @@
     "item.nerfeedmod.alcoholic_spawn_egg": "Яйцо спавна алкоголика",
     "block.nerfeedmod.shot_glasses": "Рюмки",
     "item.nerfeedmod.grape": "Виноград",
-    "block.nerfeedmod.grape_bush": "Виноградный куст"
+    "block.nerfeedmod.grape_bush": "Виноградный куст",
+    "item.nerfeedmod.mug_of_beer.effect.empty": "Пиво"
 }
