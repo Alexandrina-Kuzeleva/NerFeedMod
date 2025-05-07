@@ -26,6 +26,8 @@ public class ModTabs {
                 output.accept(new ItemStack(ModItems.ALCOHOLIC_SPAWN_EGG.get())); 
                 output.accept(ModBlocks.SHOT_GLASSES_ITEM.get());
                 output.accept(ModItems.GRAPE.get());
+                output.accept(ModItems.BARLEY.get());
+                output.accept(ModItems.BARLEY_SEEDS.get());
             })
             .build()
     );

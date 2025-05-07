@@ -16,6 +16,7 @@ public class NerFeedModClientSetup {
         event.enqueueWork(() -> {
             // Это то, что нужно для прозрачных текстур кустов
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GRAPE_BUSH.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BARLEY_CROP.get(), RenderType.cutout());
         });
     }
 }

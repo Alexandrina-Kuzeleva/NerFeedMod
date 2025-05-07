@@ -1,5 +1,6 @@
 package com.NerFeed.NerFeedMod;
 
+import com.NerFeed.NerFeedMod.block.BarleyCropBlock;
 import com.NerFeed.NerFeedMod.block.GrapeBushBlock;
 import com.NerFeed.NerFeedMod.block.LightCube;
 import com.NerFeed.NerFeedMod.block.ShotGlassesBlock;
@@ -8,6 +9,8 @@ import com.NerFeed.NerFeedMod.block.VodkaBottleBlock;
 import com.NerFeed.NerFeedMod.item.GrapeItem;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,6 +43,9 @@ public class ModBlocks {
     );
 
     public static final RegistryObject<Block> GRAPE_BUSH = BLOCKS.register("grape_bush", GrapeBushBlock::new);
+
+    public static final RegistryObject<Block> BARLEY_CROP = BLOCKS.register("barley_crop",
+    () -> new BarleyCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

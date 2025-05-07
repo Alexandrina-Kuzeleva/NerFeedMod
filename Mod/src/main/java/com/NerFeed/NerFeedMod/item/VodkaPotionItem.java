@@ -1,6 +1,7 @@
 package com.NerFeed.NerFeedMod.item;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -8,11 +9,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 
 import java.util.List;
+
+import com.NerFeed.NerFeedMod.ModBlocks;
 
 public class VodkaPotionItem extends PotionItem {
 
@@ -81,6 +86,26 @@ public class VodkaPotionItem extends PotionItem {
             entity.hurt(entity.damageSources().genericKill(), Float.MAX_VALUE);
             entity.getPersistentData().putInt(VODKA_COUNT_KEY, 0);
         }
+    }
+
+    @Override
+    public InteractionResult useOn(UseOnContext context) {
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        BlockPos placePos = pos.relative(context.getClickedFace());
+        ItemStack stack = context.getItemInHand();
+
+        if (level.isEmptyBlock(placePos)) {
+            if (!level.isClientSide) {
+                level.setBlock(placePos, ModBlocks.VODKA_BOTTLE_BLOCK.get().defaultBlockState(), 3);
+                if (!context.getPlayer().isCreative()) {
+                    stack.shrink(1);
+                }
+            }
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+
+        return super.useOn(context);
     }
 
     @Override

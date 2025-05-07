@@ -1,6 +1,8 @@
 package com.NerFeed.NerFeedMod;
 
 import com.NerFeed.NerFeedMod.entity.AlcoholicEntity;
+import com.NerFeed.NerFeedMod.item.BarleyItem;
+import com.NerFeed.NerFeedMod.item.BarleySeedsItem;
 import com.NerFeed.NerFeedMod.item.GrapeItem;
 import com.NerFeed.NerFeedMod.item.VinoPotionItem;
 import com.NerFeed.NerFeedMod.item.VodkaPotionItem;
@@ -48,6 +50,12 @@ public class ModItems {
     public static final RegistryObject<Item> GRAPE = ITEMS.register("grape", GrapeItem::new);
     public static final RegistryObject<Item> GRAPE_BUSH_ITEM = ITEMS.register("grape_bush", 
         () -> new BlockItem(ModBlocks.GRAPE_BUSH.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> BARLEY_SEEDS = ITEMS.register("barley_seeds",
+        () -> new BarleySeedsItem(new Item.Properties()));
+    public static final RegistryObject<Item> BARLEY = ITEMS.register("barley", 
+        () -> new BarleyItem(new Item.Properties()
+    ));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

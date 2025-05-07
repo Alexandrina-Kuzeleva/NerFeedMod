@@ -1,0 +1,69 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "nerfeedmod:barley_seeds",
+            "conditions": [
+              {
+                "condition": "minecraft:block_state_property",
+                "block": "nerfeedmod:barley_crop",
+                "properties": {
+                  "age": "7"
+                }
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 1,
+                  "max": 3
+                }
+              }
+            ]
+          },
+          {
+            "type": "minecraft:item",
+            "name": "nerfeedmod:barley_seeds",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "nerfeedmod:barley",
+            "conditions": [
+              {
+                "condition": "minecraft:block_state_property",
+                "block": "nerfeedmod:barley_crop",
+                "properties": {
+                  "age": "7"
+                }
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 1,
+                  "max": 2
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
