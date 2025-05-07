@@ -13,5 +13,7 @@
     "block.nerfeedmod.shot_glasses": "Рюмки",
     "item.nerfeedmod.grape": "Виноград",
     "block.nerfeedmod.grape_bush": "Виноградный куст",
-    "item.nerfeedmod.mug_of_beer.effect.empty": "Пиво"
+    "item.nerfeedmod.mug_of_beer.effect.empty": "Пиво",
+        "item.nerfeedmod.dried_barley": "Сушенный ячмень",
+    "item.nerfeedmod.barley": "Ячмень"
 }

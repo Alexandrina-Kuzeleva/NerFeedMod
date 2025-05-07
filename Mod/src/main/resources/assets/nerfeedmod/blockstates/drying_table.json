@@ -1,0 +1,10 @@
+{
+    "variants": {
+      "active=false": {
+        "model": "nerfeedmod:block/drying_table"
+      },
+      "active=true": {
+        "model": "nerfeedmod:block/drying_table_active"
+      }
+    }
+  }

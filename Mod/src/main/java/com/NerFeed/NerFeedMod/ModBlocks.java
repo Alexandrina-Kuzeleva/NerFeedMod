@@ -1,6 +1,7 @@
 package com.NerFeed.NerFeedMod;
 
 import com.NerFeed.NerFeedMod.block.BarleyCropBlock;
+import com.NerFeed.NerFeedMod.block.DryingTableBlock;
 import com.NerFeed.NerFeedMod.block.GrapeBushBlock;
 import com.NerFeed.NerFeedMod.block.LightCube;
 import com.NerFeed.NerFeedMod.block.MugOfBeerBlock;
@@ -51,6 +52,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> MUG_OF_BEER = BLOCKS.register("mug_of_beer", MugOfBeerBlock::new);
     public static final RegistryObject<Item> MUG_OF_BEER_ITEM = BLOCK_ITEMS.register("mug_of_beer", () -> 
         new BlockItem(MUG_OF_BEER.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Block> DRYING_TABLE = BLOCKS.register("drying_table",
+        () -> new DryingTableBlock()
     );
 
     public static void register(IEventBus eventBus) {

@@ -28,7 +28,9 @@ public class ModTabs {
                 output.accept(ModItems.GRAPE.get());
                 output.accept(ModItems.BARLEY.get());
                 output.accept(ModItems.BARLEY_SEEDS.get());
+                output.accept(ModItems.DRIED_BARLEY.get());
                 output.accept(ModItems.BEER.get());
+                output.accept(ModBlocks.DRYING_TABLE.get());
             })
             .build()
     );

@@ -32,6 +32,8 @@ public class Main {
         ModEntity.register(modEventBus);
         ModEffects.registerEffects(modEventBus);
         ModPotions.registerPotions();
+        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+        ModMenus.MENUS.register(modEventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
