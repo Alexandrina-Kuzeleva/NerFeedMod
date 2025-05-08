@@ -3,10 +3,10 @@ package com.NerFeed.NerFeedMod.block.entity;
 import com.NerFeed.NerFeedMod.ModBlockEntities;
 import com.NerFeed.NerFeedMod.ModItems;
 import com.NerFeed.NerFeedMod.block.DryingTableBlock;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -20,9 +20,16 @@ import net.minecraftforge.items.ItemStackHandler;
 public class DryingTableBlockEntity extends BaseContainerBlockEntity {
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
-    private final ItemStackHandler inventory = new ItemStackHandler(2);
+    private final ItemStackHandler inventory = new ItemStackHandler(2) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
+            setChanged();
+            syncToClient();
+        }
+    };
     private int progress = 0;
-    private static final int MAX_PROGRESS = 200; // 10 секунд (200 тиков), можно увеличить до 24000 для 1 игрового дня
+    private static final int MAX_PROGRESS = 200; // 10 секунд (200 тиков)
 
     public DryingTableBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.DRYING_TABLE.get(), pos, state);
@@ -60,17 +67,25 @@ public class DryingTableBlockEntity extends BaseContainerBlockEntity {
 
     @Override
     public ItemStack removeItem(int slot, int amount) {
-        return inventory.extractItem(slot, amount, false);
+        ItemStack stack = inventory.extractItem(slot, amount, false);
+        setChanged();
+        syncToClient();
+        return stack;
     }
 
     @Override
     public ItemStack removeItemNoUpdate(int slot) {
-        return inventory.extractItem(slot, inventory.getStackInSlot(slot).getCount(), false);
+        ItemStack stack = inventory.extractItem(slot, inventory.getStackInSlot(slot).getCount(), false);
+        setChanged();
+        syncToClient();
+        return stack;
     }
 
     @Override
     public void setItem(int slot, ItemStack stack) {
         inventory.setStackInSlot(slot, stack);
+        setChanged();
+        syncToClient();
     }
 
     @Override
@@ -84,6 +99,8 @@ public class DryingTableBlockEntity extends BaseContainerBlockEntity {
         for (int i = 0; i < getContainerSize(); i++) {
             inventory.setStackInSlot(i, ItemStack.EMPTY);
         }
+        setChanged();
+        syncToClient();
     }
 
     public void dropItems() {
@@ -107,29 +124,49 @@ public class DryingTableBlockEntity extends BaseContainerBlockEntity {
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, DryingTableBlockEntity blockEntity) {
-        // Проверяем наличие редстоун-сигнала
         boolean isPowered = state.getValue(DryingTableBlock.ACTIVE);
+        System.out.println("serverTick: isPowered=" + isPowered + ", canProcess=" + blockEntity.canProcess() + ", progress=" + blockEntity.progress);
+        
+        // Предыдущее значение прогресса для проверки изменений
+        int previousProgress = blockEntity.progress;
+    
         if (!isPowered || !blockEntity.canProcess()) {
-            blockEntity.progress = 0;
+            if (blockEntity.progress > 0) {
+                blockEntity.progress = 0;
+                blockEntity.syncToClient(); // Синхронизируем только при сбросе прогресса
+            }
             return;
         }
-
+    
         blockEntity.progress++;
         if (blockEntity.progress >= MAX_PROGRESS) {
             blockEntity.processItem();
             blockEntity.progress = 0;
+            blockEntity.syncToClient(); // Синхронизируем после обработки
         }
-        blockEntity.setChanged();
+    
+        // Синхронизируем только если прогресс изменился (например, каждые 10 тиков)
+        if (blockEntity.progress % 10 == 0 || blockEntity.progress != previousProgress) {
+            blockEntity.syncToClient();
+        }
     }
 
     private boolean canProcess() {
         ItemStack input = inventory.getStackInSlot(INPUT_SLOT);
         ItemStack output = inventory.getStackInSlot(OUTPUT_SLOT);
+        System.out.println("canProcess: input=" + input + ", output=" + output);
 
-        if (input.isEmpty()) return false;
+        if (input.isEmpty()) {
+            System.out.println("Input slot is empty");
+            return false;
+        }
 
         ItemStack result = getResult(input);
-        if (result.isEmpty()) return false;
+        System.out.println("Result: " + result);
+        if (result.isEmpty()) {
+            System.out.println("No valid result for input");
+            return false;
+        }
 
         if (output.isEmpty()) return true;
         return output.getItem() == result.getItem() && output.getCount() + result.getCount() <= output.getMaxStackSize();
@@ -137,8 +174,10 @@ public class DryingTableBlockEntity extends BaseContainerBlockEntity {
 
     private ItemStack getResult(ItemStack input) {
         if (input.getItem() == ModItems.BARLEY.get()) {
+            System.out.println("Input matches BARLEY, returning DRIED_BARLEY");
             return new ItemStack(ModItems.DRIED_BARLEY.get(), 1);
         }
+        System.out.println("Input does not match BARLEY");
         return ItemStack.EMPTY;
     }
 
@@ -154,10 +193,13 @@ public class DryingTableBlockEntity extends BaseContainerBlockEntity {
                 output.grow(result.getCount());
             }
             input.shrink(1);
+            setChanged();
+            syncToClient();
         }
     }
 
     public ItemStackHandler getInventory() {
+        System.out.println("Inventory: slot 0=" + inventory.getStackInSlot(0) + ", slot 1=" + inventory.getStackInSlot(1));
         return inventory;
     }
 
@@ -167,5 +209,30 @@ public class DryingTableBlockEntity extends BaseContainerBlockEntity {
 
     public static int getMaxProgress() {
         return MAX_PROGRESS;
+    }
+
+    private void syncToClient() {
+        if (level != null && !level.isClientSide) {
+            setChanged();
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        }
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag tag = super.getUpdateTag();
+        tag.putInt("Progress", progress);
+        return tag;
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag tag) {
+        super.handleUpdateTag(tag);
+        progress = tag.getInt("Progress");
+    }
+
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 }

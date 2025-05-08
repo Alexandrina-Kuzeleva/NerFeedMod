@@ -1,5 +1,6 @@
 package com.NerFeed.NerFeedMod;
 
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -15,6 +16,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.NerFeed.NerFeedMod.potion.ModEffects;
 import com.NerFeed.NerFeedMod.potion.ModPotions;
+import com.NerFeed.NerFeedMod.screen.DryingTableScreen;
 
 @Mod(Main.MOD_ID)
 public class Main {
@@ -45,6 +47,9 @@ public class Main {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            MenuScreens.register(ModMenus.DRYING_TABLE.get(), DryingTableScreen::new);
+        });
         LOGGER.info("Клиент NerFeedMod настроен!");
     }
 

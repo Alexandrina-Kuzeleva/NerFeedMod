@@ -11,6 +11,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -64,8 +66,18 @@ public class DryingTableBlock extends Block implements EntityBlock {
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
         boolean isPowered = level.hasNeighborSignal(pos);
+        System.out.println("neighborChanged: isPowered=" + isPowered + ", current ACTIVE=" + state.getValue(ACTIVE));
         if (isPowered != state.getValue(ACTIVE)) {
             level.setBlock(pos, state.setValue(ACTIVE, isPowered), 3);
         }
+    }
+
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        if (level.isClientSide()) {
+            return null;
+        }
+        return type == ModBlockEntities.DRYING_TABLE.get() ? (level1, pos, state1, blockEntity) ->
+                DryingTableBlockEntity.serverTick(level1, pos, state1, (DryingTableBlockEntity) blockEntity) : null;
     }
 }
