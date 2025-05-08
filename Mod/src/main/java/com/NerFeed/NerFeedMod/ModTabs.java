@@ -31,6 +31,8 @@ public class ModTabs {
                 output.accept(ModItems.DRIED_BARLEY.get());
                 output.accept(ModItems.BEER.get());
                 output.accept(ModBlocks.DRYING_TABLE.get());
+                output.accept(ModItems.CUCUMBER.get());
+                output.accept(ModItems.CUCUMBER_SEEDS.get());
             })
             .build()
     );

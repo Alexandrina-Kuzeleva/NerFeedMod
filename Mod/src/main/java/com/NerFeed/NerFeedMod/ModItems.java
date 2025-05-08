@@ -4,6 +4,8 @@ import com.NerFeed.NerFeedMod.entity.AlcoholicEntity;
 import com.NerFeed.NerFeedMod.item.BarleyItem;
 import com.NerFeed.NerFeedMod.item.BarleySeedsItem;
 import com.NerFeed.NerFeedMod.item.BeerItem;
+import com.NerFeed.NerFeedMod.item.CucumberItem;
+import com.NerFeed.NerFeedMod.item.CucumberSeedsItem;
 import com.NerFeed.NerFeedMod.item.DriedBarleyItem;
 import com.NerFeed.NerFeedMod.item.GrapeItem;
 import com.NerFeed.NerFeedMod.item.VinoPotionItem;
@@ -69,6 +71,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> DRYING_TABLE = ITEMS.register("drying_table",
         () -> new BlockItem(ModBlocks.DRYING_TABLE.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> CUCUMBER_SEEDS = ITEMS.register("cucumber_seeds",
+        () -> new CucumberSeedsItem(new Item.Properties()));
+    public static final RegistryObject<Item> CUCUMBER = ITEMS.register("cucumber", 
+        () -> new CucumberItem(new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {

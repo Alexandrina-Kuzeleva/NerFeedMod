@@ -15,5 +15,8 @@
     "block.nerfeedmod.grape_bush": "Grape Bush",
     "item.nerfeedmod.mug_of_beer.effect.empty": "Beer",
     "item.nerfeedmod.dried_barley": "Dried barley",
-    "item.nerfeedmod.barley": "Barley"
+    "item.nerfeedmod.barley": "Barley",
+    "item.nerfeedmod.barley_seeds": "Barley seeds",
+    "item.nerfeedmod.cucumber": "Cucumber",
+    "item.nerfeedmod.cucumber_seeds": "Cucumber seeds" 
 }

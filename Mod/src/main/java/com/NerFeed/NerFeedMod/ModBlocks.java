@@ -1,6 +1,7 @@
 package com.NerFeed.NerFeedMod;
 
 import com.NerFeed.NerFeedMod.block.BarleyCropBlock;
+import com.NerFeed.NerFeedMod.block.CucumberBushBlock;
 import com.NerFeed.NerFeedMod.block.DryingTableBlock;
 import com.NerFeed.NerFeedMod.block.GrapeBushBlock;
 import com.NerFeed.NerFeedMod.block.LightCube;
@@ -56,6 +57,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DRYING_TABLE = BLOCKS.register("drying_table",
         () -> new DryingTableBlock()
+    );
+
+    public static final RegistryObject<Block> CUCUMBER_BUSH = BLOCKS.register("cucumber_bush",
+    () -> new CucumberBushBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT))
     );
 
     public static void register(IEventBus eventBus) {
