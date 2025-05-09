@@ -33,6 +33,8 @@ public class ModTabs {
                 output.accept(ModBlocks.DRYING_TABLE.get());
                 output.accept(ModItems.CUCUMBER.get());
                 output.accept(ModItems.CUCUMBER_SEEDS.get());
+                output.accept(ModItems.PICKLED_CUCUMBERS.get());
+                output.accept(ModItems.SALT.get());
             })
             .build()
     );

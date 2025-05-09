@@ -18,5 +18,7 @@
     "item.nerfeedmod.barley": "Ячмень",
     "item.nerfeedmod.barley_seeds": "Семена ячменя",
     "item.nerfeedmod.cucumber": "Огурец",
-    "item.nerfeedmod.cucumber_seeds": "Семена огурца" 
+    "item.nerfeedmod.cucumber_seeds": "Семена огурца",
+        "item.nerfeedmod.salt": "СОль",
+    "item.nerfeedmod.pickled_cucumbers.effect.empty": "Маринованные огурцы"
 }

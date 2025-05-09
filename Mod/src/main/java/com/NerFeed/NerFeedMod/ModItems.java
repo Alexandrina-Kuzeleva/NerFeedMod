@@ -8,6 +8,8 @@ import com.NerFeed.NerFeedMod.item.CucumberItem;
 import com.NerFeed.NerFeedMod.item.CucumberSeedsItem;
 import com.NerFeed.NerFeedMod.item.DriedBarleyItem;
 import com.NerFeed.NerFeedMod.item.GrapeItem;
+import com.NerFeed.NerFeedMod.item.PickledCucumbersItem;
+import com.NerFeed.NerFeedMod.item.SaltItem;
 import com.NerFeed.NerFeedMod.item.VinoPotionItem;
 import com.NerFeed.NerFeedMod.item.VodkaPotionItem;
 
@@ -77,6 +79,12 @@ public class ModItems {
         () -> new CucumberSeedsItem(new Item.Properties()));
     public static final RegistryObject<Item> CUCUMBER = ITEMS.register("cucumber", 
         () -> new CucumberItem(new Item.Properties())
+    );
+    public static final RegistryObject<Item> PICKLED_CUCUMBERS = ITEMS.register("pickled_cucumbers", 
+        () -> new PickledCucumbersItem(new Item.Properties())
+    );
+    public static final RegistryObject<Item> SALT = ITEMS.register("salt", 
+        () -> new SaltItem(new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {

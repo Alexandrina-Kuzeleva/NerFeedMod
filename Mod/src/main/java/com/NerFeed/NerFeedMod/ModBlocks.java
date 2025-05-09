@@ -6,6 +6,7 @@ import com.NerFeed.NerFeedMod.block.DryingTableBlock;
 import com.NerFeed.NerFeedMod.block.GrapeBushBlock;
 import com.NerFeed.NerFeedMod.block.LightCube;
 import com.NerFeed.NerFeedMod.block.MugOfBeerBlock;
+import com.NerFeed.NerFeedMod.block.PickledCucumbersBlock;
 import com.NerFeed.NerFeedMod.block.ShotGlassesBlock;
 import com.NerFeed.NerFeedMod.block.VinoBottleBlock;
 import com.NerFeed.NerFeedMod.block.VodkaBottleBlock;
@@ -61,6 +62,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CUCUMBER_BUSH = BLOCKS.register("cucumber_bush",
     () -> new CucumberBushBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT))
+    );
+
+    public static final RegistryObject<Block> PICKLED_CUCUMBERS_BLOCK = BLOCKS.register("pickled_cucumbers_block", PickledCucumbersBlock::new);
+    public static final RegistryObject<Item> PICKLED_CUCUMBERS_BLOCK_ITEM = BLOCK_ITEMS.register("pickled_cucumbers_block", () -> 
+        new BlockItem(PICKLED_CUCUMBERS_BLOCK.get(), new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "SLW",
+      "CCC",
+      "GGG"
+    ],
+    "key": {
+      "S": { "item": "minecraft:sugar" },
+      "L": { "item": "nerfeedmod:salt" },
+      "W": { "item": "minecraft:water_bucket" },  
+      "C": { "item": "nerfeedmod:cucumber" },
+      "G": { "item": "minecraft:glass_pane" }
+    },
+    "result": {
+      "item": "nerfeedmod:pickled_cucumbers",
+      "count": 3  
+    }
+  }
