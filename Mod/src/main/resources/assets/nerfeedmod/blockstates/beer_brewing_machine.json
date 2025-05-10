@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "nerfeedmod:block/beer_brewing_machine" }
+    }
+}

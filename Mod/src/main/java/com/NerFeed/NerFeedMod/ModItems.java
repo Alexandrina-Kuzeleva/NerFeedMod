@@ -3,6 +3,7 @@ package com.NerFeed.NerFeedMod;
 import com.NerFeed.NerFeedMod.entity.AlcoholicEntity;
 import com.NerFeed.NerFeedMod.item.BarleyItem;
 import com.NerFeed.NerFeedMod.item.BarleySeedsItem;
+import com.NerFeed.NerFeedMod.item.BeerBrewingMachineItem;
 import com.NerFeed.NerFeedMod.item.BeerItem;
 import com.NerFeed.NerFeedMod.item.CucumberItem;
 import com.NerFeed.NerFeedMod.item.CucumberSeedsItem;
@@ -85,6 +86,9 @@ public class ModItems {
     );
     public static final RegistryObject<Item> SALT = ITEMS.register("salt", 
         () -> new SaltItem(new Item.Properties())
+    );
+    public static final RegistryObject<Item> BEER_BREWING_MACHINE_ITEM = ITEMS.register("beer_brewing_machine_item", 
+        () -> new BeerBrewingMachineItem(new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {

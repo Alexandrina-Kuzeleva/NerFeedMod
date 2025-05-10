@@ -14,11 +14,12 @@
     "item.nerfeedmod.grape": "Виноград",
     "block.nerfeedmod.grape_bush": "Виноградный куст",
     "item.nerfeedmod.mug_of_beer.effect.empty": "Пиво",
-        "item.nerfeedmod.dried_barley": "Сушенный ячмень",
+    "item.nerfeedmod.dried_barley": "Сушенный ячмень",
     "item.nerfeedmod.barley": "Ячмень",
     "item.nerfeedmod.barley_seeds": "Семена ячменя",
     "item.nerfeedmod.cucumber": "Огурец",
     "item.nerfeedmod.cucumber_seeds": "Семена огурца",
-        "item.nerfeedmod.salt": "СОль",
-    "item.nerfeedmod.pickled_cucumbers.effect.empty": "Маринованные огурцы"
+    "item.nerfeedmod.salt": "СОль",
+    "item.nerfeedmod.pickled_cucumbers.effect.empty": "Маринованные огурцы",
+    "item.nerfeedmod.beer_brewing_machine_item": "Пивоварка"
 }

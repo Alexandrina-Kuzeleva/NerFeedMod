@@ -35,6 +35,7 @@ public class ModTabs {
                 output.accept(ModItems.CUCUMBER_SEEDS.get());
                 output.accept(ModItems.PICKLED_CUCUMBERS.get());
                 output.accept(ModItems.SALT.get());
+                output.accept(ModItems.BEER_BREWING_MACHINE_ITEM.get());
             })
             .build()
     );
