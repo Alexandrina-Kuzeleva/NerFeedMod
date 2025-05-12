@@ -9,6 +9,7 @@ import com.NerFeed.NerFeedMod.item.CucumberItem;
 import com.NerFeed.NerFeedMod.item.CucumberSeedsItem;
 import com.NerFeed.NerFeedMod.item.DriedBarleyItem;
 import com.NerFeed.NerFeedMod.item.GrapeItem;
+import com.NerFeed.NerFeedMod.item.LemonItem;
 import com.NerFeed.NerFeedMod.item.PickledCucumbersItem;
 import com.NerFeed.NerFeedMod.item.SaltItem;
 import com.NerFeed.NerFeedMod.item.VinoPotionItem;
@@ -17,6 +18,7 @@ import com.NerFeed.NerFeedMod.item.VodkaPotionItem;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -90,6 +92,7 @@ public class ModItems {
     public static final RegistryObject<Item> BEER_BREWING_MACHINE_ITEM = ITEMS.register("beer_brewing_machine_item", 
         () -> new BeerBrewingMachineItem(new Item.Properties())
     );
+    public static final RegistryObject<Item> LEMON = ITEMS.register("lemon", LemonItem::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

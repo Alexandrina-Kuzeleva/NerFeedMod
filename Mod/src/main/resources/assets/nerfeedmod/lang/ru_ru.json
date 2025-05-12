@@ -21,5 +21,9 @@
     "item.nerfeedmod.cucumber_seeds": "Семена огурца",
     "item.nerfeedmod.salt": "СОль",
     "item.nerfeedmod.pickled_cucumbers.effect.empty": "Маринованные огурцы",
-    "item.nerfeedmod.beer_brewing_machine_item": "Пивоварка"
+    "item.nerfeedmod.beer_brewing_machine_item": "Пивоварка",
+    "item.nerfeedmod.lemon": "Лимон",
+    "block.nerfeedmod.lemon_log": "Лимонное бревно",
+    "block.nerfeedmod.lemon_leaves": "Лимонная листва",
+    "block.nerfeedmod.lemon_sapling": "Саженец лимонного дерева"
 }

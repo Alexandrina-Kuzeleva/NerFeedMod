@@ -21,5 +21,9 @@
     "item.nerfeedmod.cucumber_seeds": "Cucumber seeds",
     "item.nerfeedmod.salt": "Salt",
     "item.nerfeedmod.pickled_cucumbers.effect.empty": "Pickled cucumbers",
-    "item.nerfeedmod.beer_brewing_machine_item": "Beer brewing Machine"
+    "item.nerfeedmod.beer_brewing_machine_item": "Beer brewing Machine",
+    "item.nerfeedmod.lemon": "Lemon",
+    "block.nerfeedmod.lemon_log": "Lemon Log",
+    "block.nerfeedmod.lemon_leaves": "Lemon Leaves",
+    "block.nerfeedmod.lemon_sapling": "Lemon Sapling"
 }

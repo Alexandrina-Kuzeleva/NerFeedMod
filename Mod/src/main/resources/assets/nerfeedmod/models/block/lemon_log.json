@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "nerfeedmod:block/lemon_log_top",
+        "side": "nerfeedmod:block/lemon_log"
+    }
+}

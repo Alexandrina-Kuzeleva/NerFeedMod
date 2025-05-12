@@ -18,6 +18,7 @@ public class NerFeedModClientSetup {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GRAPE_BUSH.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.BARLEY_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CUCUMBER_BUSH.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.LEMON_SAPLING.get(), RenderType.cutout());
         });
     }
 }

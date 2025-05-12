@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/leaves",
+    "textures": {
+        "all": "nerfeedmod:block/lemon_leaves"
+    }
+}

@@ -5,6 +5,10 @@ import com.NerFeed.NerFeedMod.block.BeerBrewingMachine;
 import com.NerFeed.NerFeedMod.block.CucumberBushBlock;
 import com.NerFeed.NerFeedMod.block.DryingTableBlock;
 import com.NerFeed.NerFeedMod.block.GrapeBushBlock;
+import com.NerFeed.NerFeedMod.block.LemonLeavesBlock;
+import com.NerFeed.NerFeedMod.block.LemonLogBlock;
+import com.NerFeed.NerFeedMod.block.LemonSaplingBlock;
+import com.NerFeed.NerFeedMod.block.LemonTreeGrower;
 import com.NerFeed.NerFeedMod.block.LightCube;
 import com.NerFeed.NerFeedMod.block.MugOfBeerBlock;
 import com.NerFeed.NerFeedMod.block.PickledCucumbersBlock;
@@ -15,6 +19,9 @@ import com.NerFeed.NerFeedMod.item.GrapeItem;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -72,6 +79,23 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BEER_BREWING_MACHINE = BLOCKS.register("beer_brewing_machine",
         () -> new BeerBrewingMachine()
+    );
+
+    public static final RegistryObject<Block> LEMON_LOG = BLOCKS.register("lemon_log", LemonLogBlock::new);
+    public static final RegistryObject<Item> LEMON_LOG_ITEM = BLOCK_ITEMS.register("lemon_log",
+        () -> new BlockItem(LEMON_LOG.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Block> LEMON_LEAVES = BLOCKS.register("lemon_leaves",
+        () -> new LemonLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Item> LEMON_LEAVES_ITEM = BLOCK_ITEMS.register("lemon_leaves",
+        () -> new BlockItem(LEMON_LEAVES.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Block> LEMON_SAPLING = BLOCKS.register("lemon_sapling",
+        () -> new LemonSaplingBlock(new LemonTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Item> LEMON_SAPLING_ITEM = BLOCK_ITEMS.register("lemon_sapling",
+        () -> new BlockItem(LEMON_SAPLING.get(), new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {

@@ -4,6 +4,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,6 +18,11 @@ import org.apache.logging.log4j.Logger;
 import com.NerFeed.NerFeedMod.potion.ModEffects;
 import com.NerFeed.NerFeedMod.potion.ModPotions;
 import com.NerFeed.NerFeedMod.screen.DryingTableScreen;
+import com.NerFeed.NerFeedMod.worldgen.ModConfiguredFeatures;
+import com.NerFeed.NerFeedMod.worldgen.ModPlacedFeatures;
+
+
+
 
 @Mod(Main.MOD_ID)
 public class Main {
@@ -25,17 +31,29 @@ public class Main {
 
     public Main() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        
+        // Основные регистрации
+        ModTabs.register(modEventBus);
+        ModBlocks.register(modEventBus);  // Блоки должны быть первыми
+        ModItems.register(modEventBus);
+        ModEntity.register(modEventBus);
+
+        // Генерация мира (должна быть после блоков)
+        //ModConfiguredFeatures.register(modEventBus);
+        //ModPlacedFeatures.register(modEventBus);
+        
+        // Эффекты и зелья
+        ModEffects.registerEffects(modEventBus);  // Сначала эффекты
+        ModPotions.registerPotions();             // Потом зелья
+        
+        // Остальные регистрации
+        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+        ModMenus.MENUS.register(modEventBus);
+        
+        // Event listeners
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::buildCreativeTabContents);
-        ModTabs.register(modEventBus);
-        ModBlocks.register(modEventBus);
-        ModItems.register(modEventBus);
-        ModEntity.register(modEventBus);
-        ModEffects.registerEffects(modEventBus);
-        ModPotions.registerPotions();
-        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
-        ModMenus.MENUS.register(modEventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

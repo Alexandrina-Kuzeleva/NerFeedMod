@@ -36,6 +36,10 @@ public class ModTabs {
                 output.accept(ModItems.PICKLED_CUCUMBERS.get());
                 output.accept(ModItems.SALT.get());
                 output.accept(ModItems.BEER_BREWING_MACHINE_ITEM.get());
+                output.accept(ModItems.LEMON.get());
+                output.accept(ModBlocks.LEMON_LOG_ITEM.get());
+                output.accept(ModBlocks.LEMON_LEAVES_ITEM.get());
+                output.accept(ModBlocks.LEMON_SAPLING_ITEM.get());
             })
             .build()
     );

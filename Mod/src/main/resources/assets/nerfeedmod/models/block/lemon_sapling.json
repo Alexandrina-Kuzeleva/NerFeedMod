@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+        "cross": "nerfeedmod:block/lemon_sapling"
+    }
+}
