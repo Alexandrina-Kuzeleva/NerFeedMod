@@ -1,5 +1,5 @@
 {
-    "itemGroup.mymod": "NerFeed Mod",
+    "itemGroup.mymod": "nerfeedmod Mod",
     "block.nerfeedmod.light_cube": "Светящийся куб",
     "effect.nerfeedmod.alcohol": "Эффект спирта",
     "item.minecraft.potion.effect.alcohol": "Зелье спирта",
@@ -25,5 +25,10 @@
     "item.nerfeedmod.lemon": "Лимон",
     "block.nerfeedmod.lemon_log": "Лимонное бревно",
     "block.nerfeedmod.lemon_leaves": "Лимонная листва",
-    "block.nerfeedmod.lemon_sapling": "Саженец лимонного дерева"
+    "block.nerfeedmod.lemon_sapling": "Саженец лимонного дерева",
+    "item.nerfeedmod.alcoholic_helmet": "Алкогольный шлем",
+    "item.nerfeedmod.alcoholic_chestplate": "Алкогольный нагрудник",
+    "item.nerfeedmod.alcoholic_leggings": "Алкогольные поножи",
+    "item.nerfeedmod.alcoholic_boots": "Алкогольные ботинки"
+
 }

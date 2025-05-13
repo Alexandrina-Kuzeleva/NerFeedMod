@@ -1,5 +1,6 @@
 package com.NerFeed.NerFeedMod;
 
+import com.NerFeed.NerFeedMod.armor.AlcoholicArmor;
 import com.NerFeed.NerFeedMod.entity.AlcoholicEntity;
 import com.NerFeed.NerFeedMod.item.BarleyItem;
 import com.NerFeed.NerFeedMod.item.BarleySeedsItem;
@@ -14,12 +15,16 @@ import com.NerFeed.NerFeedMod.item.PickledCucumbersItem;
 import com.NerFeed.NerFeedMod.item.SaltItem;
 import com.NerFeed.NerFeedMod.item.VinoPotionItem;
 import com.NerFeed.NerFeedMod.item.VodkaPotionItem;
+import com.NerFeed.NerFeedMod.material.AlcoholicArmorMaterial;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -93,6 +98,16 @@ public class ModItems {
         () -> new BeerBrewingMachineItem(new Item.Properties())
     );
     public static final RegistryObject<Item> LEMON = ITEMS.register("lemon", LemonItem::new);
+
+    // Регистрация всех частей брони
+    public static final RegistryObject<Item> ALCOHOLIC_HELMET = ITEMS.register("alcoholic_helmet",
+            () -> new AlcoholicArmor(new AlcoholicArmorMaterial(), ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> ALCOHOLIC_CHESTPLATE = ITEMS.register("alcoholic_chestplate",
+            () -> new AlcoholicArmor(new AlcoholicArmorMaterial(), ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> ALCOHOLIC_LEGGINGS = ITEMS.register("alcoholic_leggings",
+            () -> new AlcoholicArmor(new AlcoholicArmorMaterial(), ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> ALCOHOLIC_BOOTS = ITEMS.register("alcoholic_boots",
+            () -> new AlcoholicArmor(new AlcoholicArmorMaterial(), ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

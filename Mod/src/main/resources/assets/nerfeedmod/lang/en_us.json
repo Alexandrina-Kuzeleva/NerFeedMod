@@ -1,5 +1,5 @@
 {
-    "itemGroup.mymod": "NerFeed Mod",
+    "itemGroup.mymod": "nerfeedmod Mod",
     "block.nerfeedmod.light_cube": "Light Cube",
     "effect.nerfeedmod.alcohol": "Alcohol Effect",
     "item.minecraft.potion.effect.alcohol": "Potion of Alcohol",
@@ -25,5 +25,9 @@
     "item.nerfeedmod.lemon": "Lemon",
     "block.nerfeedmod.lemon_log": "Lemon Log",
     "block.nerfeedmod.lemon_leaves": "Lemon Leaves",
-    "block.nerfeedmod.lemon_sapling": "Lemon Sapling"
+    "block.nerfeedmod.lemon_sapling": "Lemon Sapling",
+    "item.nerfeedmod.alcoholic_helmet": "Alcoholic helmet",
+    "item.nerfeedmod.alcoholic_chestplate": "Alcoholic chestplate",
+    "item.nerfeedmod.alcoholic_leggings": "Alcoholic leggings",
+    "item.nerfeedmod.alcoholic_boots": "Alcoholic boots"
 }

@@ -40,6 +40,10 @@ public class ModTabs {
                 output.accept(ModBlocks.LEMON_LOG_ITEM.get());
                 output.accept(ModBlocks.LEMON_LEAVES_ITEM.get());
                 output.accept(ModBlocks.LEMON_SAPLING_ITEM.get());
+                output.accept(ModItems.ALCOHOLIC_HELMET.get());
+                output.accept(ModItems.ALCOHOLIC_CHESTPLATE.get());
+                output.accept(ModItems.ALCOHOLIC_LEGGINGS.get());
+                output.accept(ModItems.ALCOHOLIC_BOOTS.get());
             })
             .build()
     );
