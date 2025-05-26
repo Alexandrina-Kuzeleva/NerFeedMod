@@ -29,5 +29,6 @@
     "item.nerfeedmod.alcoholic_helmet": "Alcoholic helmet",
     "item.nerfeedmod.alcoholic_chestplate": "Alcoholic chestplate",
     "item.nerfeedmod.alcoholic_leggings": "Alcoholic leggings",
-    "item.nerfeedmod.alcoholic_boots": "Alcoholic boots"
+    "item.nerfeedmod.alcoholic_boots": "Alcoholic boots",
+    "block.nerfeedmod.edge_grate": "Edge Grate"
 }

@@ -44,6 +44,7 @@ public class ModTabs {
                 output.accept(ModItems.ALCOHOLIC_CHESTPLATE.get());
                 output.accept(ModItems.ALCOHOLIC_LEGGINGS.get());
                 output.accept(ModItems.ALCOHOLIC_BOOTS.get());
+                output.accept(ModItems.EDGE_GRATE.get());
             })
             .build()
     );

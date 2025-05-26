@@ -98,6 +98,9 @@ public class ModBlocks {
         () -> new BlockItem(LEMON_SAPLING.get(), new Item.Properties())
     );
 
+    public static final RegistryObject<Block> EDGE_GRATE = BLOCKS.register("edge_grate",
+        () -> new EdgeGrateBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BARS)));
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
         BLOCK_ITEMS.register(eventBus);

@@ -108,6 +108,9 @@ public class ModItems {
             () -> new AlcoholicArmor(new AlcoholicArmorMaterial(), ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> ALCOHOLIC_BOOTS = ITEMS.register("alcoholic_boots",
             () -> new AlcoholicArmor(new AlcoholicArmorMaterial(), ArmorItem.Type.BOOTS, new Item.Properties()));
+    
+    public static final RegistryObject<Item> EDGE_GRATE = ITEMS.register("edge_grate",
+        () -> new BlockItem(ModBlocks.EDGE_GRATE.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

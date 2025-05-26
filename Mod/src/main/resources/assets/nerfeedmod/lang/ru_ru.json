@@ -29,6 +29,7 @@
     "item.nerfeedmod.alcoholic_helmet": "Алкогольный шлем",
     "item.nerfeedmod.alcoholic_chestplate": "Алкогольный нагрудник",
     "item.nerfeedmod.alcoholic_leggings": "Алкогольные поножи",
-    "item.nerfeedmod.alcoholic_boots": "Алкогольные ботинки"
+    "item.nerfeedmod.alcoholic_boots": "Алкогольные ботинки",
+    "block.nerfeedmod.edge_grate": "Edge Grate"
 
 }

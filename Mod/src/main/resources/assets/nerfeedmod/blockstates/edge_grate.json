@@ -1,0 +1,87 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_post"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_side",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_side",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_side",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "north": "false"
+      },
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_cap",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "false"
+      },
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_cap",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "false"
+      },
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_cap",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "west": "false"
+      },
+      "apply": {
+        "model": "nerfeedmod:block/edge_grate_cap",
+        "y": 270,
+        "uvlock": true
+      }
+    }
+  ]
+}
